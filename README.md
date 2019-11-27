@@ -46,3 +46,8 @@
 
 ### WordPressおよびPHP
 いずれ！
+
+---
+
+## 制作・運営
+石井 将直 / Masanao Ishii (Cloudy knot)
