@@ -23,13 +23,18 @@
 ## 命名規則
 
 ### 命名の考え方・原則
+#### Semantic (意味型)とDeclarative (宣言型)
 
 ### ファイル命名
 #### コードファイル
 #### メディアファイル
 
-### CSSスタイリング用のclassセレクター命名
-#### 命名サンプル集
+### CSSセレクタ命名 (class、id)ほか
+#### ECSS + RSCSSを採用
+#### Scoped CSSまたはCSS Modulesの場合
+#### name属性
+#### data-\*属性
+#### class命名サンプル集
 
 ### JavaScriptにおける命名
 #### 関数、変数、メソッド、名前空間
@@ -39,5 +44,5 @@
 
 ## バックエンドガイドライン
 
+## WordPressおよびPHP
 いずれ！
-<!-- ### CMS (おもにWordPress) -->
