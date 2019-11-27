@@ -44,5 +44,5 @@
 
 ## バックエンドガイドライン
 
-## WordPressおよびPHP
+### WordPressおよびPHP
 いずれ！
