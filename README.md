@@ -60,6 +60,8 @@
 ### サーバー知識
 ### コマンドライン (CLI / CUI)
 
+### セキュリティ
+
 ### WordPressおよびPHP
 ### Ruby on Rails
 ### Python
