@@ -1,8 +1,10 @@
-# フロントエンドガイドライン
+# コーディングガイドライン & 命名規則
 
-## HTML
+## フロントエンドガイドライン
 
-### HTMLマークアップにおける参照仕様書
+### HTML
+
+#### HTMLマークアップにおける参照仕様書
 
 * HTML Standard(英文): <https://html.spec.whatwg.org/>
   * HTML5という呼称自体は2021年1月に廃止され、HTML Standardが標準仕様 - HTML5.2とHTML Living standardの違い: <https://www.modis.jp/staffing/insight/column_122/>
@@ -10,99 +12,99 @@
 * 積極的・能動的にHTMLテンプレートエンジンは使用しない。素のHTMLが結局扱いやすいため
   * Webアプリケーションフレームワークやライブラリ上で機構として組み込まれたものはこの限りではない。例. Node.js(/Express)における[EJS](https://ejs.co/)、Ruby on Railsにおける[Slim](http://slim-lang.com/)、ほか[Handlebars](https://handlebarsjs.com/)、[Twig](https://twig.symfony.com/)など
 
-## CSS
+### CSS
 
-### プリプロセッサ言語Sass(サス、サース)を活用
+#### プリプロセッサ言語Sass(サス、サース)を活用
 
 * 基本的にSCSS構文(拡張子: .scss)を選択
 
-## JavaScript
+### JavaScript
 
-## メディア (画像・音声・動画など)
+### メディア (画像・音声・動画など)
 
-## フォント
+### フォント
 
-## アクセシビリティ
+### アクセシビリティ
 
-## パフォーマンス
+### パフォーマンス
 
-## ビルドツールとバージョン管理
+### ビルドツールとバージョン管理
 
-## OS / ブラウザサポート・最適化
+### OS / ブラウザサポート・最適化
 
-## その他
+### その他
 
-### 提供言語 (ローカリゼーション)
+#### 提供言語 (ローカリゼーション)
 
-### Deployment / Integration
+#### Deployment / Integration
 
 ---
 
-## 命名規則
+### 命名規則
 
-## 命名の考え方・原則
+### 命名の考え方・原則
 
-### Semantic (意味型)とDeclarative (宣言型)
+#### Semantic (意味型)とDeclarative (宣言型)
 
-## ファイル命名
+### ファイル命名
 
-### コードファイル
+#### コードファイル
 
-### メディアファイル
+#### メディアファイル
 
-## CSSセレクタ命名 (class、id)ほか
+### CSSセレクタ命名 (class、id)ほか
 
-### ECSS + RSCSSを採用
+#### ECSS + RSCSSを採用
 
-### Scoped CSSまたはCSS Modulesの場合
+#### Scoped CSSまたはCSS Modulesの場合
 
-### name属性
+#### name属性
 
-### data-\*属性
+#### data-\*属性
 
-### class命名サンプル集
+#### class命名サンプル集
 
-## JavaScriptにおける命名
+### JavaScriptにおける命名
 
-### 関数、変数、メソッド、名前空間
+#### 関数、変数、メソッド、名前空間
 
-### classオブジェクト、列挙型
+#### classオブジェクト、列挙型
 
 ---
 
 ## 知っておきたいWeb・ソフトウェア開発デザインおよびバックエンドの知識
 
-## システム設計 / 要件定義
+### システム設計 / 要件定義
 
-## データべース設計
+### データべース設計
 
-### ER図
+#### ER図
 
-### MySQL / PostgreSQL
+#### MySQL / PostgreSQL
 
-## UML (統一モデリング言語 / Unified Modeling Language)
+### UML (統一モデリング言語 / Unified Modeling Language)
 
-### シーケンス図
+#### シーケンス図
 
-### オブジェクト図
+#### オブジェクト図
 
-### ユースケース図
+#### ユースケース図
 
-### クラス図
+#### クラス図
 
-## オブジェクト指向
+### オブジェクト指向
 
-## サーバー知識
+### サーバー知識
 
-## コマンドライン (CLI / CUI)
+### コマンドライン (CLI / CUI)
 
-## セキュリティ
+### セキュリティ
 
-## WordPressおよびPHP
+### WordPressおよびPHP
 
-## Ruby on Rails
+### Ruby on Rails
 
-## Python
+### Python
 
 ---
 
