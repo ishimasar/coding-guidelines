@@ -11,6 +11,10 @@
   * 日本語訳等: <https://github.com/whatwg/html/wiki/Translations>
 * 積極的・能動的にHTMLテンプレートエンジンは使用しない。素のHTMLが結局扱いやすいため
   * Webアプリケーションフレームワークやライブラリ上で機構として組み込まれたものはこの限りではない。例. Node.js(/Express)における[EJS](https://ejs.co/)、Ruby on Railsにおける[Slim](http://slim-lang.com/)、ほか[Handlebars](https://handlebarsjs.com/)、[Twig](https://twig.symfony.com/)など
+* マークアップチェッカー/バリデーター
+  * HTML Conformance Checkers: <https://whatwg.org/validator/> = <https://validator.w3.org/nu/>
+    * ※2021年時点有効と判断
+  * VScodeエディタ拡張機能「[W3C Validation](https://marketplace.visualstudio.com/items?itemName=Umoxfo.vscode-w3cvalidation)」によるバリデーションも利用OK。(ただしJREが必要、たまに動かなくなるなど少し面倒)
 
 ### CSS
 
@@ -19,6 +23,8 @@
 * 基本的にSCSS構文(拡張子: .scss)を選択
 
 ### JavaScript
+
+*
 
 ### メディア (画像・音声・動画など)
 
