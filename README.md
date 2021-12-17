@@ -44,7 +44,7 @@
 
 * セマンティックなマークアップを心がける
 * head要素内項目(meta、OGP、link、script、解析ツール系ほか)から、できる範囲で埋めていく
-  * head内マークアップ初期テンプレートはこちらを使用
+  * head内マークアップ初期テンプレートは[こちら](https://raw.githubusercontent.com/ishimasar/coding-guidelines/master/docs/html-head-item-template.html)を参照・活用する
 * 「HTML ガイドライン - MDN プロジェクト」の内容に則る
   * <https://developer.mozilla.org/ja/docs/MDN/Guidelines/Code_guidelines/HTML>
     * 「クラス名と ID 名」項のみ無視してOK
