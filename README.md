@@ -2,6 +2,22 @@
 
 ## フロントエンドガイドライン
 
+### 共通コーディング規約
+
+#### 対象言語
+
+* HTML
+* CSS
+* JavaScript
+* PHP、Ruby、Python
+
+#### 構文チェック
+
+* 言語ごとのチェッカー/バリデーター/リンターなどのツールを通し、その指摘項目に従う、または参照・判断基準にする、自動修正をする(言語ごとの推奨ツールは以下に記載)
+  * フレームワークやライブラリなどを導入している場合でも上記順守
+  * テストツール(Jest、Seleniumなど)、CI/CD(huskyなど)、テストコードの活用は問題ない
+  * インデントはspace2つ(半角スペース2つ)。これ以外のspace数、タブによるインデントは原則禁止。もちろん全角スペースもダメ
+
 ### HTML
 
 #### マストチェック
@@ -27,8 +43,8 @@
 #### 規約
 
 * セマンティックなマークアップを心がける
-* head要素内項目(meta、OGP、link、script、解析ツール系)から、できる範囲で埋めていく
-  * head内マークアップ初期テンプレートはこちらを使用のこと
+* head要素内項目(meta、OGP、link、script、解析ツール系ほか)から、できる範囲で埋めていく
+  * head内マークアップ初期テンプレートはこちらを使用
 * 「HTML ガイドライン - MDN プロジェクト」の内容に則る
   * <https://developer.mozilla.org/ja/docs/MDN/Guidelines/Code_guidelines/HTML>
     * 「クラス名と ID 名」項のみ無視してOK
@@ -55,25 +71,9 @@
 * ul、ol要素の直下にはli要素しか置けない。ほかはすべて構文エラー
 * dl要素の直下にはdivが置ける
 
-### コーディングWebアクセシビリティ
-
-#### 推奨チェックツール
-
-* AXE Accessibility Check(エディタ拡張機能およびnpm module)
-* WAVE Web Accessibility Evaluation Tool(Chrome拡張機能)
-* A11yc アクセシビリティ チェック サービス(Webサービス)
-  * <https://a11yc.com/check/index.php>
-
-#### 標準仕様書
-
-* 「Web Content Accessibility Guidelines (WCAG) 2.1」by W3C
-  * <https://www.w3.org/TR/WCAG21/>
-
-#### 規約
-
 * アクセシブルなマークアップを心がける
-* HTMLの要素(タグ)では表現しきれないアプリケーションUIやウィジェット機能は、「WAI-ARIA」のrole属性とaria-*で補完する
-  * 例. 検索バーはrole="search"、タブUIはrole="tablist"、"tab"などなど
+  * HTMLの要素(タグ)では表現しきれないアプリケーションUIやウィジェット機能は、「WAI-ARIA」のrole属性とaria-*属性で補完する
+  * 例. 検索バーは`role="search"`、タブUIは`role="tablist"`、`"tab"`などなど
   * 詳しい種類はこちらを参照：<https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques>
 
 #### Web(HTML)テンプレートエンジンの使用有無
@@ -107,7 +107,7 @@
 #### 規約
 
 * CSSスタイルはclassセレクタ指定を原則用いる
-  * classセレクタの子や子孫として、必然性のある要素セレクタ(.class(ul) > li)や属性セレクタ(aria-*、data-*含む)指定は問題ない。idセレクタは推奨しない
+  * classセレクタの子や子孫として、必然性のある要素セレクタ(`.class(ul) > li`)や属性セレクタ(`[aria-*]`、`[data-*]`含む)指定は問題ない。idセレクタは推奨しない
 * リセットCSSは古過ぎない仕様のものであれば使用OK
 * `!important` の利用は避ける。動的にスタイルを付け替える際は仕方ない場合もあるが極力回避する
 * 変数には[CSS Custom properties](https://www.w3.org/TR/css-variables-1/#defining-variables)を利用
@@ -131,7 +131,7 @@
 * CSSのグローバル汚染が起きなければ基本どんな構成、ルールでもOK
 * 基本的には、設定ファイル群(baseディレクトリ)とそれ以外のUIモジュール/コンポーネントファイル群(generalディレクトリ)の2構成がシンプルかつ必要十分だと思っている
   * 命名規則はBEMに近いものであれば最大公約数的に良いと思われる
-  * 名前空間・接頭辞(.home-*、.about-*、.header-*、.hero-*など)で縛るのはアリ
+  * 名前空間・接頭辞(`.home-*`、`.about-*`、`.header-*`、`.hero-*`など)で縛るのはアリ
   * ECSS、RSCSSの記法を取り入れてもOK
 * プロジェクト特性に応じて、CSS Modules、Scoped CSS、CSS in JSなども、1プロジェクトにつきいずれかひとつを利用可とする
 * CSSフレームワークやフロントエンドライブラリ(ReactコンポーネントやVueフレームワーク含む)の利用について
@@ -166,10 +166,9 @@
 * 以下2つのJavaScriptコーディングガイドラインを基準として扱う。矛盾する部分を除いて基本的事項を以下に列挙する
   * 「JavaScript guidelines - MDN」by Mozilla
     * <https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Code_guidelines/JavaScript>
-    * 基本
+    * 基本・空白
       * 1行あたりの行数は80文字以下に収める
       * 関数やオブジェクトなどの定義ブロックの前後は空行で区切る
-    * 空白
       * 2項演算子は空白で区切る
       * カンマ/セミコロン、キーワードの後方には空白を含める(ただし行末の空白は不要)
     * 命名
@@ -177,12 +176,12 @@
       * 定数名はすべて大文字のアンダースコア形式
       * コンストラクター/クラス名は先頭大文字のCamelCase形式
       * プライベートメンバーは「_」で始める
-      * イベントハンドラー関数は「on」で始める
     * その他
       * すべての変数は宣言、初期化すること
       * 変数の宣言が重複しないこと
       * 配列、オブジェクトの生成には、[...]、{...}などのリテラル構文を利用すること
       * 真偽値をtrue/falseと比較しない
+      * 条件判定には、等価演算子(`==`)ではなく、厳密等価演算子(`===`)を用いる
   * Google JavaScript Style Guide
     * <https://google.github.io/styleguide/jsguide.html>
     * 主な規約
@@ -190,7 +189,6 @@
       * 文字列のくくりには「"」よりも「'」を優先して利用する
       * 基本データ型(stringやnumber、booleanなど)のラッパーオブジェクトは使用しない
       * 名前空間を利用して、グローバルレベルの名前は最小限に抑える
-      * ブロックを表す{...}の前に改行は入れない
       * ビルトインオブジェクトのプロトタイプは書き換えない
       * with/eval命令は利用しない
       * for...in命令は連想配列/ハッシュでのみ利用する
@@ -206,11 +204,35 @@
 
 ### フォント
 
-#### web fontの使用
+#### システムフォント
 
-* 和文web fontはファイルサイズが重いため、基本的に使用を避ける
+* メリット：Webページの表示パフォーマンス観点から、フォントはすべてシステムフォント指定とすることの意義・効果は大きい
+* デメリット：硬めの雰囲気を持つフォントが多いため、文字によるデザイン表現性に幅が出しにくい
+* 個人的な基本フォント指定はすべてシステムフォントが前提(2021)
+  * `Helvetica Neue,Segoe UI, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, BIZ UDPGothic, Meiryo, sans-serif;`
+  * 参考記事：<https://ics.media/entry/200317/>
+  
+#### Webフォント
 
-### アクセシビリティ
+* メリット：文字によるデザイン表現性の幅が広がる。Webページの雰囲気が豊かになる。Noto Sansなどとても可読性が高いフォントもある
+* デメリット：日本語(和文)Webフォントは軽量化を図ってさえファイルサイズが重いため、致命的なパフォーマンスボトルネックになり得る。基本的に使用を避けたい
+* 欧文Webフォントの利用は1~2ウェイト程度ならパフォーマンス的にはさほど問題なさそう
+* 推奨するWebフォントの読み込み方 - CSS @font-face
+  * <https://github.com/ishimasar/pattern-library/blob/main/src/assets/scss/base/_font-face.scss>
+
+### Webアクセシビリティ
+
+#### 推奨チェックツール
+
+* AXE Accessibility Check(エディタ拡張機能およびnpm module)
+* WAVE Web Accessibility Evaluation Tool(Chrome拡張機能)
+* A11yc アクセシビリティ チェック サービス(Webサービス)
+  * <https://a11yc.com/check/index.php>
+
+#### 標準仕様書
+
+* 「Web Content Accessibility Guidelines (WCAG) 2.1」by W3C
+  * <https://www.w3.org/TR/WCAG21/>
 
 ### パフォーマンス
 
@@ -218,25 +240,34 @@
 
 * PageSpeed Insights(Webサービス)
   * <https://pagespeed.web.dev/>
-* Lighthouse(Chrome DevTools)
+* Lighthouse(Chrome拡張機能)
 * GTmetrix(Webサービス)
   * <https://gtmetrix.com/>
 
 #### 最適化
 
-* HTMLのscript要素はdefer(解析系はasync)属性を付与した上で、head要素内(`</head>直上付近`)に記載する
+* HTMLのscript要素はdefer(解析系はasync)属性を付与した上で、head要素内に記載する
   * これによりレンダリング阻害が緩和される
-  * 用途によってhead要素内に記述できないscriptソースもあるのでそれは上記の限りではない
+  * 用途によってhead要素内に記述できないスクリプトもあるので上記の限りではない
 * 描画パフォーマンス寄与のため、link要素のpreroad属性、Resource Hints API(prefetch、preconnect属性など)をアセットへ適切に適用する
 * コードファイルおよび画像、動画、音声、Webフォントといったバイナリファイルは最適化処理をしてから納品する
-  * 画像はWebPフォーマットの利用OKだが、PNG/JPEGフォールバック(picture、source要素)も用意する(2021/12現在、Safariがまだ完全対応でないため)
-  * 画像、動画、音声、Webフォントファイルはプロジェクト内で極端にディレクトリに小分けしない。シンプルでOK
+  * フォーマットごとに何かしらの最適化ツールがあるので使う
+  * WebPフォーマット画像の利用とともに、PNG/JPEGフォールバック(picture、source要素)も用意する(2021現在、Safariがまだ完全対応でないため)
+  * 画像、動画、音声、Webフォントファイルはプロジェクト内で極端にディレクトリに小分けせず、シンプルに
   * 一定以上サイズの画像と日本語(和文)Webフォント利用は、致命的なパフォーマンスボトルネックになり得るので要注意
-
 
 ### ビルドツールとバージョン管理
 
-### 品質検証(デバイスおよびOS別ブラウザチェック)
+#### フロントエンドビルドツールの利用について
+
+* webpack、parcel、viteなどのビルドパッケージ、またはNext.js、Nuxt.js、Svelte、GatsbyなどのJSフレームワーク類、いずれも利用は特に問題ない。そのプロジェクトにふさわしいと思われるものを選定することを旨とする
+
+#### バージョン管理ツール
+
+* Git + GitHubを利用
+* 開発ワークフロー：基本GitHub Flowで行う。場合に応じてgit-flowやカスタマイズを適用する
+
+### デバイスおよびOS別ブラウザチェック - 品質検証
 
 #### 納品直前に必ず品質検証(QA)を実施する
 
@@ -262,9 +293,11 @@
 
 ### その他
 
-#### コードレビュー方針
+#### 提供言語 (ローカリゼーション)
 
-##### ツール
+#### Deployment / Integration
+
+#### コードレビュー方針
 
 * GitHub Pull Request機能を用いて、主にレビューを行う
   * レビュイー(レビューを受ける側)はコーディングの目的を明確化して作業し、レビュアー(レビューをする側)に伝達する
@@ -272,23 +305,19 @@
     * 枝葉や関係のない部分の指摘は無闇に行わない。目的と関係ない部分で必要性がある場合は別途タスクとして切り出す
   * レビュアーはレビュー依頼に極力迅速に反応する(すぐレビューできない場合もそのことを伝える)
 
-#### 提供言語 (ローカリゼーション)
-
-#### Deployment / Integration
-
 ---
 
 ### 命名規則
 
-### 命名の考え方・原則
-
-#### Semantic (意味型)とDeclarative (宣言型)
+### 命名の考え方
 
 ### ファイル命名
 
-#### コードファイル
+#### 対象：コード/テキストファイル、ディレクトリファイル(フォルダ)、メディアファイル(画像、動画、音声、フォント)
 
-#### メディアファイル
+* 基本的に英文小文字(lower case/ローワーケース)
+* ハイフン(-)つなぎで統一。アンダースコア(_)つなぎ禁止
+* 利用しているフレームワーク/ツールの仕様によってはこの限りではない
 
 ### CSSセレクタ命名 (class、id)ほか
 
