@@ -117,9 +117,8 @@
 * CSSショートハンド記法は使ってもいいが、1プロパティの指定で用いない、また重ねがけしない
   * NG例： `margin: 2rem auto auto;`
   * OK例： `margin-block-start: 2rem;`
-* 納品ファイルに含める場合、CSSプリプロセッサはSass・SCSS記法(拡張子.scss)を用いる
-  * Sass以外のCSSプリプロセッサ納品は要相談
-* 新規プロジェクトの場合、SassコンパイラはDart Sassを利用する。それ以外は要相談(2021/12現在)
+* CSSプリプロセッサ言語は最もメジャーと思われるSass・SCSS記法(拡張子.scss)を用いる
+* 新規プロジェクトの場合、SassコンパイラはDart Sassを利用する(2021/12現在)
   * 根拠：公式にてメジャー版として推奨されている
     * <https://sass-lang.com/blog/libsass-is-deprecated>
 * Sass利用時のコメント記法の書き分け
