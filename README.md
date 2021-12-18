@@ -61,10 +61,10 @@
   * 根拠：記述なしは構文エラー。チェッカーを通せば出るが、よく見るので特筆した
 * img要素は仕様としてdiv、figure、picture要素などを親として囲ってもいいし、囲わなくてもどちらでもいい。無意味にネストを深くしないという目的では後者
 * 画像のレスポンシブ対応はimg要素・srcset属性/sizes属性やpicture/source要素を用いる
-* section要素はbody要素の子要素として使用不可
-  * 根拠：body要素(セクショニングルート)はアウトラインを形成するため、section要素(セクショニングコンテンツ)と機能重複する
+* section要素はbody要素などセクショニングルートの直下の子要素として使用不可
+  * 根拠：セクショニングルートはアウトラインを形成するため、section要素(セクショニングコンテンツ)と機能重複する
   * 参考：<https://developer.mozilla.org/ja/docs/orphaned/Web/Guide/HTML/Using_HTML_sections_and_outlines#The_HTML5_outline_algorithm>
-* section要素は子要素にh(x)要素がなければ使用不可
+* section要素は子・子孫要素にh(x)要素を含まなければ使用不可
   * 根拠：見出しなしセクションは推奨されていない
   * 参考：<https://html.spec.whatwg.org/multipage/sections.html#the-section-element>
 * article要素は「独立した意味のある記事」に用いる。要約・切り出しコンテンツやブログ記事へのリンクラップ要素などで使っている例を見るがそれらは定義上誤り
