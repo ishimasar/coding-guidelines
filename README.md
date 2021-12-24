@@ -160,6 +160,7 @@
 
 * 「TC39 - Specifying JavaScript.」by Ecma International
   * <https://tc39.es/>
+  * 日本語訳：<https://tc39.es/ja/>
 * 補足的な解説書：「MDN Web Docs」by Mozilla
   * <https://developer.mozilla.org/ja/docs/Web/JavaScript/Language_Resources>
 
@@ -181,7 +182,7 @@
     * その他
       * すべての変数は宣言、初期化すること
       * 変数の宣言が重複しないこと
-      * 配列、オブジェクトの生成には、[...]、{...}などのリテラル構文を利用すること
+      * 配列、オブジェクトの生成には、`[...]`、`{...}`などのリテラル構文を利用すること
       * 真偽値をtrue/falseと比較しない
       * 条件判定には、等価演算子(`==`)ではなく、厳密等価演算子(`===`)を用いる
   * Google JavaScript Style Guide
@@ -211,7 +212,7 @@
 * メリット：Webページの表示パフォーマンス観点から、フォントはすべてシステムフォント指定とすることの意義・効果は大きい
 * デメリット：硬めの雰囲気を持つフォントが多いため、文字によるデザイン表現性に幅が出しにくい
 * 個人的な基本フォント指定はすべてシステムフォントが前提(2021)
-  * `Helvetica Neue,Segoe UI, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, BIZ UDPGothic, Meiryo, sans-serif;`
+  * `Helvetica Neue, Segoe UI, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, BIZ UDPGothic, Meiryo, sans-serif;`
   * 参考記事：<https://ics.media/entry/200317/>
   
 #### Webフォント
@@ -319,6 +320,7 @@
 #### 対象：コード/テキストファイル、ディレクトリファイル(フォルダ)、メディアファイル(画像、動画、音声、フォント)
 
 * 基本的に英文小文字(lower case/ローワーケース)
+  * 通しorバージョン番号として数字使用OK(`xx-01`、`xx-02`...)
 * ハイフン(-)つなぎで統一。アンダースコア(_)つなぎ禁止
 * 利用しているフレームワーク/ツールの仕様によってはこの限りではない
 
