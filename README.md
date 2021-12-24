@@ -326,7 +326,10 @@
 
 ### CSSセレクタ命名 (class、id)ほか
 
-#### ECSS + RSCSSを採用
+#### ECSS + rscssを採用
+
+* ECSS公式：<https://ecss.benfrain.com/>
+* rscss公式：<https://rscss.io/>
 
 #### Scoped CSSまたはCSS Modulesの場合
 
